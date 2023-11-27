@@ -1,70 +1,51 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
-import {
-  persistReducer,
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  Storage,
-} from 'redux-persist';
+import { create } from 'zustand';
+import { createJSONStorage, persist, StateStorage } from 'zustand/middleware';
 import { MMKV } from 'react-native-mmkv';
-
-import { api } from '../services/api';
-import theme from './theme';
-
-const reducers = combineReducers({
-  theme,
-  [api.reducerPath]: api.reducer,
-});
+import { initializeMMKVFlipper } from 'react-native-mmkv-flipper-plugin';
+import zustandFlipper from 'react-native-flipper-zustand';
 
 const storage = new MMKV();
-export const reduxStorage: Storage = {
-  setItem: (key, value) => {
-    storage.set(key, value);
-    return Promise.resolve(true);
+
+if (__DEV__) {
+  initializeMMKVFlipper({ default: storage });
+}
+
+const zustandStorage: StateStorage = {
+  getItem: (name: string) => {
+    const value: any = storage.getString(name);
+    return value ?? null;
   },
-  getItem: key => {
-    const value = storage.getString(key);
-    return Promise.resolve(value);
+  setItem: (name, value: any) => {
+    storage.set(name, value);
   },
-  removeItem: key => {
-    storage.delete(key);
-    return Promise.resolve();
+  removeItem: name => {
+    return storage.delete(name);
   },
 };
 
-const persistConfig = {
-  key: 'root',
-  storage: reduxStorage,
-  whitelist: ['theme', 'auth'],
+type BearStore = {
+  bears: number;
+  increasePopulation: () => void;
+  decreasePopulation: () => void;
+  removeAllBears: () => void;
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
-
-const store = configureStore({
-  reducer: persistedReducer,
-  middleware: getDefaultMiddleware => {
-    const middlewares = getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+export const useStore = create<BearStore>()(
+  zustandFlipper(
+    persist(
+      (set, get) => ({
+        bears: 0,
+        // "set" now receives as the third parameter, the name of an action that will be shown in Flipper
+        increasePopulation: () =>
+          set(() => ({ bears: get().bears + 1 }), false, 'INCREASE_POPULATION'),
+        decreasePopulation: () =>
+          set(() => ({ bears: get().bears - 1 }), false, 'DECREASE_POPULATION'),
+        removeAllBears: () => set({ bears: 0 }),
+      }),
+      {
+        name: 'bears',
+        storage: createJSONStorage(() => zustandStorage),
       },
-    }).concat(api.middleware);
-
-    if (__DEV__ && !process.env.JEST_WORKER_ID) {
-      const createDebugger = require('redux-flipper').default;
-      middlewares.push(createDebugger());
-    }
-
-    return middlewares;
-  },
-});
-
-const persistor = persistStore(store);
-
-setupListeners(store.dispatch);
-
-export { store, persistor };
+    ),
+  ),
+);
