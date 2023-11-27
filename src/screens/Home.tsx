@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { useStore } from '../store';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Counter = () => {
   const counter = useStore(state => state.bears);
@@ -20,6 +22,8 @@ export const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to the Home screen!</Text>
+      <MaterialIcons name="home" size={30} color="#900" />
+      <MaterialCommunityIcons name="home" size={30} color="#900" />
       <Counter />
     </View>
   );

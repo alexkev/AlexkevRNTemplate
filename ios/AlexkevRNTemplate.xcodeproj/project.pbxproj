@@ -38,6 +38,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AlexkevRNTemplate/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-AlexkevRNTemplate-AlexkevRNTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlexkevRNTemplate-AlexkevRNTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-AlexkevRNTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexkevRNTemplate.debug.xcconfig"; path = "Target Support Files/Pods-AlexkevRNTemplate/Pods-AlexkevRNTemplate.debug.xcconfig"; sourceTree = "<group>"; };
+		3E5D9E312B1538CA00540AA1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		3E5D9E322B1538CA00540AA1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AlexkevRNTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexkevRNTemplate.release.xcconfig"; path = "Target Support Files/Pods-AlexkevRNTemplate/Pods-AlexkevRNTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AlexkevRNTemplate-AlexkevRNTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexkevRNTemplate-AlexkevRNTemplateTests.debug.xcconfig"; path = "Target Support Files/Pods-AlexkevRNTemplate-AlexkevRNTemplateTests/Pods-AlexkevRNTemplate-AlexkevRNTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-AlexkevRNTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlexkevRNTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 		13B07FAE1A68108700A75B9A /* AlexkevRNTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3E5D9E302B15387600540AA1 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -104,6 +107,15 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-AlexkevRNTemplate-AlexkevRNTemplateTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E5D9E302B15387600540AA1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3E5D9E312B1538CA00540AA1 /* MaterialCommunityIcons.ttf */,
+				3E5D9E322B1538CA00540AA1 /* MaterialIcons.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -242,6 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5D9E342B1538CA00540AA1 /* MaterialIcons.ttf in Resources */,
+				3E5D9E332B1538CA00540AA1 /* MaterialCommunityIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -486,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HH673SN3QR;
+				DEVELOPMENT_TEAM = JGP4JLTJFP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AlexkevRNTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
