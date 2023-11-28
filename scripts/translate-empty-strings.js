@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 
-const filePath = './app/translations/es.json';
+const filePath = './src/translations/es.json';
 
 function findEmptyStringsInTranslations(obj, result) {
   for (const key in obj) {

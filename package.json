@@ -14,7 +14,6 @@
     "i18n": "npx i18next-parser && node ./scripts/translate-empty-strings.js"
   },
   "dependencies": {
-    "@os-team/i18next-react-native-language-detector": "^1.0.30",
     "@react-native-masked-view/masked-view": "^0.2.9",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
