@@ -99,6 +99,5 @@ Using react-native-ulimate-config (for environment variables) see [here](https:/
 
 # Credit
 - This a hard fork of [this repo](https://github.com/thecodingmachine/react-native-boilerplate/tree/main) by [TheCodingMachine](https://thecodingmachine.github.io/react-native-boilerplate/). See there site for more  information.
-- @alexkev translations script, zustand store, and react-native-mmkv setup
-- 
+- @alexkev: translations scripts, zustand store, and react-native-mmkv setup
 - Inspiration from this book: [***The Ultimate Guide to React Native Optimization***](https://www.callstack.com/ebook/the-ultimate-guide-to-react-native-optimization)
