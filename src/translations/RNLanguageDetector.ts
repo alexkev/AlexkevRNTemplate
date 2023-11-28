@@ -1,7 +1,7 @@
 import { Settings, I18nManager, Platform } from 'react-native';
 import { LanguageDetectorModule } from 'i18next';
 
-export const RNLocaleDetector: LanguageDetectorModule = {
+export const RNLanguageDetector: LanguageDetectorModule = {
   type: 'languageDetector',
   init: () => {},
   detect,

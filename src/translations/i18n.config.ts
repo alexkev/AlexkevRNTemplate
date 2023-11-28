@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 
 import { en, es } from '.';
-import { RNLocaleDetector } from './RNLocaleDetector';
+import { RNLanguageDetector } from './RNLanguageDetector';
 
 const resources = {
   en: {
@@ -15,7 +15,7 @@ const resources = {
 };
 
 i18n
-  .use(RNLocaleDetector)
+  .use(RNLanguageDetector)
   .use(initReactI18next)
   .init({
     compatibilityJSON: 'v3',
