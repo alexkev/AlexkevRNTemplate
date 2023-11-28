@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import ApplicationNavigator from './navigators/Application';
+import { Navigation } from '@/navigation';
 import './translations/i18n.config';
 
-const App = () => <ApplicationNavigator />;
+const App = () => <Navigation />;
 
 export default App;

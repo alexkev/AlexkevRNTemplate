@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { ApplicationScreenProps } from '../../../@types/navigation';
+import { ApplicationScreenProps } from 'types/navigation';
 
-const Startup = ({ navigation }: ApplicationScreenProps) => {
+export const Startup = ({ navigation }: ApplicationScreenProps) => {
   const init = async () => {
     navigation.reset({
       index: 0,
@@ -20,5 +20,3 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
     </View>
   );
 };
-
-export default Startup;

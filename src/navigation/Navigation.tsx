@@ -6,15 +6,15 @@ import {
   Theme,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import { Startup } from '../screens';
-import MainNavigator from './Main';
+import { Startup } from '@/screens';
+import { Main } from '@/navigation';
 import { useFlipper } from '@react-navigation/devtools';
-import { ApplicationStackParamList } from '../../@types/navigation';
+import { ApplicationStackParamList } from 'types/navigation';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
 // @refresh reset
-const ApplicationNavigator = () => {
+export const Navigation = () => {
   const DefaultTheme: Theme = {
     dark: false,
     colors: {
@@ -36,10 +36,8 @@ const ApplicationNavigator = () => {
       <StatusBar barStyle={'light-content'} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Startup" component={Startup} />
-        <Stack.Screen name="Main" component={MainNavigator} />
+        <Stack.Screen name="Main" component={Main} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-export default ApplicationNavigator;
