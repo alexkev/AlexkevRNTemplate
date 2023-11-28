@@ -1,2 +1,2 @@
-import { palette } from './palette';
-import Imgaes from './Images';
+export { Colors, NavigationColors, FontSize, MetricsSizes } from './palette';
+export * as Images from './Images';
