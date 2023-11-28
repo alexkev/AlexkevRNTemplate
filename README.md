@@ -86,18 +86,18 @@ export const MyComponent = () => {
 Each line is parsed by running `npx i18next-parser` (which is configured in [i18next-parser.config.js](./i18next-parser.config.js)) and added to the keys of all the lanaguage files. The [./scripts/translate-empty-strings.js](./scripts/translate-empty-strings.js) script then translates the corresponding language files. This has been simnplified to `npm run i18n` which runs both scripts.
 
 
-# Styling 
+## Styling 
 -  Icons (react-native-vector-icons) 
    -  Only MaterialCommunityIcons & MaterialIcons were add to optimized bundle size
    -  Use [this icon directory](https://oblador.github.io/react-native-vector-icons/) to find icons
 
-# Config
+## Config
 Using react-native-ulimate-config (for environment variables) see [here](https://github.com/maxkomarychev/react-native-ultimate-config/tree/master). configured here: [./rnucrc.js](./.rnucrc.js). 
 
 `npm run rnuc <env file ex: .env.dev>	`
 
 
-# Credit
+## Credit
 - This a hard fork of [this repo](https://github.com/thecodingmachine/react-native-boilerplate/tree/main) by [TheCodingMachine](https://thecodingmachine.github.io/react-native-boilerplate/). See there site for more  information.
 - @alexkev: translations scripts, zustand store, and react-native-mmkv setup
 - Inspiration from this book: [***The Ultimate Guide to React Native Optimization***](https://www.callstack.com/ebook/the-ultimate-guide-to-react-native-optimization)
