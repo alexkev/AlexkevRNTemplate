@@ -12,6 +12,12 @@ module.exports = {
     'react/require-default-props': ['error'],
     'react/default-props-match-prop-types': ['error'],
     'react/sort-prop-types': ['error'],
+    'react/no-unstable-nested-components': [
+      'warn',
+      {
+        allowAsProps: true,
+      },
+    ],
   },
   settings: {
     'import/resolver': {

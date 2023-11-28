@@ -1,2 +1,3 @@
-export { Startup } from './Startup/Startup';
-export { Home } from './Home';
+export { Startup } from './Startup';
+export { Zustand } from './Zustand';
+export { Translations } from './Translations';

@@ -1,37 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { useStore } from '../store';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTranslation } from 'react-i18next';
-import Config from 'react-native-ultimate-config';
 
 const Counter = () => {
+  const { t } = useTranslation();
   const counter = useStore(state => state.bears);
   const increment = useStore(state => state.increasePopulation);
   const decrement = useStore(state => state.decreasePopulation);
 
   return (
     <View>
-      <Text>Counter: {counter}</Text>
-      <Button title="Increment" onPress={increment} />
-      <Button title="Decrement" onPress={decrement} />
+      <Button title="Increment" onPress={increment} color="blue" />
+      <Text style={styles.counterText}>
+        {t('counter:')} {counter}
+      </Text>
+      <Button title="Decrement" onPress={decrement} color="red" />
     </View>
   );
 };
 
-export const Home = () => {
+export const Zustand = () => {
   const { t } = useTranslation();
-
-  console.log('%cHome.tsx line:26 Config', 'color: #007acc;', Config);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        {t('Welcome to the Home screen!')}, {Config.ENV}
-      </Text>
-      <MaterialIcons name="home" size={30} color="#900" />
-      <MaterialCommunityIcons name="home" size={30} color="#900" />
+      <Text style={styles.text}>{t('Zustand demo')}</Text>
       <Counter />
     </View>
   );
@@ -46,5 +40,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  counterText: {
+    fontSize: 20,
+    marginBottom: 10,
   },
 });
