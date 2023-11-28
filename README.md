@@ -91,6 +91,11 @@ Each line is parsed by running `npx i18next-parser` (which is configured in [i18
    -  Only MaterialCommunityIcons & MaterialIcons were add to optimized bundle size
    -  Use [this icon directory](https://oblador.github.io/react-native-vector-icons/) to find icons
 
+# Config
+Using react-native-ulimate-config (for environment variables) see [here](https://github.com/maxkomarychev/react-native-ultimate-config/tree/master). configured here: [./rnucrc.js](./.rnucrc.js). 
+
+`npm run rnuc <env file ex: .env.dev>	`
+
 
 # Credit
 - This a hard fork of [this repo](https://github.com/thecodingmachine/react-native-boilerplate/tree/main) by [TheCodingMachine](https://thecodingmachine.github.io/react-native-boilerplate/). See there site for more  information.

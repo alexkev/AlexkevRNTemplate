@@ -4,6 +4,7 @@ import { useStore } from '../store';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTranslation } from 'react-i18next';
+import Config from 'react-native-ultimate-config';
 
 const Counter = () => {
   const counter = useStore(state => state.bears);
@@ -21,9 +22,14 @@ const Counter = () => {
 
 export const Home = () => {
   const { t } = useTranslation();
+
+  console.log('%cHome.tsx line:26 Config', 'color: #007acc;', Config);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{t('Welcome to the Home screen!')}</Text>
+      <Text style={styles.text}>
+        {t('Welcome to the Home screen!')}, {Config.ENV}
+      </Text>
       <MaterialIcons name="home" size={30} color="#900" />
       <MaterialCommunityIcons name="home" size={30} color="#900" />
       <Counter />
