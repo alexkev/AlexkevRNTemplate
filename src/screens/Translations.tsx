@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Config from 'react-native-ultimate-config';
+import { Button } from 'react-native-paper';
 
 export const Translations = () => {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,8 @@ export const Translations = () => {
       <Text>
         {t('current language')}: {i18n?.language}
       </Text>
-      <Button title={t('Change Language')} onPress={changeLanguage} />
+      <Button onPress={changeLanguage}>{t('Change Language')}</Button>
+
       <Text style={styles.absoluteBottomRight}>{Config.ENV}</Text>
     </View>
   );
