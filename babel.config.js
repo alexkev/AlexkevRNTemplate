@@ -10,6 +10,7 @@ module.exports = {
         alias: {
           '@': './src',
           types: './@types',
+          '^react-native$': 'react-native-web',
         },
       },
     ],

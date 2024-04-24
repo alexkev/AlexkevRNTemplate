@@ -1,6 +1,9 @@
 module.exports = {
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleNameMapper: {
+    '^react-native$': 'react-native-web',
+  },
   setupFilesAfterEnv: [
     './node_modules/react-native-gesture-handler/jestSetup.js',
     '<rootDir>/jest.setup.js',

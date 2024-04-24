@@ -2,7 +2,6 @@ import React from 'react';
 import { Translations, Zustand } from '@/screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Trans, Translation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 
